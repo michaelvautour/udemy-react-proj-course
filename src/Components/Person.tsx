@@ -1,5 +1,5 @@
 const Person = () => {
-    return <h2>Mike V is better than Nicole</h2>
-}
+  return <h2>Mike</h2>;
+};
 
 export default Person;
