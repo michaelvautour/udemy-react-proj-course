@@ -24,6 +24,12 @@ const secondBook = {
   author: "George R. R. Martin",
 };
 
+type Props = {
+  img: string;
+  title: string;
+  author: string;
+};
+
 const BookList = () => {
   return (
     <section className="booklist">
@@ -45,15 +51,39 @@ const BookList = () => {
   );
 };
 
-const Book = (props: any) => {
+const Book = ({ img, title, author }: Props) => {
   return (
     <article className="book">
-      <img src={props.img} alt="" width="50%" height="50%" />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={img} alt="" width="50%" height="50%" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
     </article>
   );
 };
+
+// EXAMPLES of Object DESTRUCTURING (about example as well)
+// One method that reduces adding props. extension into return
+// const Book = (props: any) => {
+//   const { img, title, author } = props;
+//   return (
+//     <article className="book">
+//       <img src={img} alt="" width="50%" height="50%" />
+//       <h1>{title}</h1>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
+
+// One method w\ props passed with props reference
+// const Book = (props: any) => {
+//   return (
+//     <article className="book">
+//       <img src={props.img} alt="" width="50%" height="50%" />
+//       <h1>{props.title}</h1>
+//       <h4>{props.author}</h4>
+//     </article>
+//   );
+// };
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
