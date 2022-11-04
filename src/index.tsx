@@ -7,11 +7,6 @@ import Person from "./Components/Person";
 // CSS
 import "./index.css";
 // setup vars
-// const author = "George R. R. Martin";
-// const title = "A Song of Ice & Fire";
-// const img =
-//   "https://m.media-amazon.com/images/I/91GcaFy+4GL._AC_UL640_FMwebp_QL65_.jpg";
-
 const firstBook = {
   img: "https://m.media-amazon.com/images/I/51rW2153DLL._SL500_.jpg",
   title: "I love You to the Moon and Back",
@@ -28,6 +23,7 @@ type Props = {
   img: string;
   title: string;
   author: string;
+  children?: JSX.Element;
 };
 
 const BookList = () => {
@@ -41,7 +37,13 @@ const BookList = () => {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto
+          sapiente laboriosam beatae, fugiat quod est illo dolore asperiores
+          odio?
+        </p>
+      </Book>
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -51,39 +53,16 @@ const BookList = () => {
   );
 };
 
-const Book = ({ img, title, author }: Props) => {
+const Book = ({ img, title, author, children }: Props) => {
   return (
     <article className="book">
       <img src={img} alt="" width="50%" height="50%" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {children}
     </article>
   );
 };
-
-// EXAMPLES of Object DESTRUCTURING (about example as well)
-// One method that reduces adding props. extension into return
-// const Book = (props: any) => {
-//   const { img, title, author } = props;
-//   return (
-//     <article className="book">
-//       <img src={img} alt="" width="50%" height="50%" />
-//       <h1>{title}</h1>
-//       <h4>{author}</h4>
-//     </article>
-//   );
-// };
-
-// One method w\ props passed with props reference
-// const Book = (props: any) => {
-//   return (
-//     <article className="book">
-//       <img src={props.img} alt="" width="50%" height="50%" />
-//       <h1>{props.title}</h1>
-//       <h4>{props.author}</h4>
-//     </article>
-//   );
-// };
 
 const container = document.getElementById("root");
 const root = createRoot(container!);

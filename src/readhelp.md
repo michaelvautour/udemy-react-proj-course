@@ -14,6 +14,7 @@ const img =
 
 const BookList = () => {
 return (
+
 <section className="booklist">
 <Person />
 <Message />
@@ -26,6 +27,7 @@ This is a booklist
 
 const Book = () => {
 return (
+
 <article className="book">
 <img src={img} alt="Game of Thrones Boxset" width="50%" height="50%" />
 <h1>{title}</h1>
@@ -48,10 +50,10 @@ _/}
 // inline css directly in the item will override (similar to non-react)
 // example no longer used below:
 
-/\* <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+<h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
 George R. R. Martin
 
-</h4>; */
+</h4>;
 
 // ReactDOM.render(<BookList />, document.getElementById("root"));
 
