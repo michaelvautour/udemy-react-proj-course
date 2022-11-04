@@ -29,7 +29,7 @@ const BookList = () => {
     <section className="booklist">
       <Person />
       <Message />
-      This is a booklist - test
+      This is a booklist
       <br />
       <Book
         img={firstBook.img}
