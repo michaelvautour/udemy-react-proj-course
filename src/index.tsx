@@ -1,6 +1,5 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-// import { ReactDOM } from "react-dom";
 import Message from "./Components/Message";
 import Person from "./Components/Person";
 
@@ -30,8 +29,8 @@ const books = [
 ];
 
 type BookProps = {
-  [x: string]: {
-    id?: number;
+  book: {
+    id: number;
     img: string;
     title: string;
     author: string;
@@ -43,14 +42,11 @@ const BookList = () => {
   return (
     <section className="booklist">
       <>
-        {books.map((book, index) => {
-          console.log("book arr", book);
-
-          return <Book bookitem={book}></Book>;
+        {books.map((book) => {
+          return <Book key={book.id} book={book}></Book>;
         })}
         <Person />
         <Message />
-        This is a booklist
         <br />
       </>
     </section>
@@ -58,8 +54,7 @@ const BookList = () => {
 };
 
 const Book = (props: BookProps) => {
-  console.log("in Book Component", props);
-  const { img, title, author, p } = props.bookitem;
+  const { img, title, author, p } = props.book;
 
   return (
     <article className="book">
