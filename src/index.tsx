@@ -51,9 +51,6 @@ const BookList = () => {
   );
 };
 
-// const complexExample = (author: string) =>
-//   void console.log("from complexExample", author);
-
 const Book = ({ img, title, author, p }: BookProps) => {
   const clickHandler = (e: any) => {
     console.log("event", e);
