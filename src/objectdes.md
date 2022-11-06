@@ -200,3 +200,11 @@ return (
 ### Replacement of the bottom of previous long code with just a longer form destructuring directly in return statement:
 
 <img title="alt Destructuring Sample" src="./mdimages/destructuring_alt.png">
+
+### Using spread operator, this included re-writing the Props Type as it no longer was a child object (terminology might be off)
+
+<img title="Spread Destructuring Sample" src="./mdimages/destructuring_spread.png">
+
+### Without using a spread operator, example is you need to match the data elements with how the object is shaped before destructuring
+
+<img title="Normal Destructuring Type" src="./mdimages/destructuring_base_match.png">
