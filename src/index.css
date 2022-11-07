@@ -45,3 +45,7 @@ body {
 .book p {
   margin-top: 0.5rem;
 }
+
+.book:hover {
+  transform: scale(1.15);
+}
